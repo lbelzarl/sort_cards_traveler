@@ -1,3 +1,4 @@
+'use strict'
 var btn = document.querySelector('#demo');
 btn.addEventListener('click', function() {
 
@@ -36,26 +37,20 @@ btn.addEventListener('click', function() {
 	createLi(after);
 });
 
+function createLi(listId) {
 
-function createLi(id) {
-	/**
-	 * Удаляет все элементы Li в указанном id списке
-	 */
-	while ( id.hasChildNodes() ) {
-		id.removeChild(id.firstChild);
+	// Удаляет все элементы  listItem в указанном listId списке
+	while ( listId.hasChildNodes() ) {
+		listId.removeChild(listId.firstChild);
 	}
 
-	/**
-	 * Конвертирует массив _cards 
-	 */
+	// Конвертирует массив _cards 
 	var cards = SCT.Cards.conversion();
 
-	/**
-     * Создает элемент Li и добавляет в список id
-     */
+	// Создает элемент listItem и добавляет в список listId
 	for (var i = 0; i < cards.length; i++) {
 		var newLi = document.createElement('li');
 		newLi.innerHTML = cards[i];
-		id.appendChild(newLi);
+		listId.appendChild(newLi);
 	}
 }

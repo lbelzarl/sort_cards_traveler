@@ -1,3 +1,4 @@
+'use strict'
 ;(function() {
 	
 	var Cards = {
@@ -9,7 +10,12 @@
 
 		/**
 		 * Добавляет карточку в массив
-		 * @param {Object} - карточка путешественника
+		 * @param {Object} - params - информация о карточке путешественника
+		 * @param params.typeTC - тип транспорта
+		 * @param params.flight - номер рейса
+		 * @param params.seat - посадочное место
+		 * @param params.A - точка отправки
+		 * @param params.B - точка прибытия
 		 */
 		addCard: function(params) {
 			this._cards.push( params );
@@ -36,7 +42,7 @@
 		 */
 		sortCards: function() {
 			var index = 0,
-				temp;			
+				temp;
 
 			/**
 			 * Находит точку отправки всего машрута(первую карточку)
@@ -72,7 +78,7 @@
 		},
 
 		/**
-		 * Преобразуем массив _cards с объектами в массив значений объета 
+		 * Каждый объект массива _cards преобразует в строк и пушит в новый массив 
 		 * @return {Array} - возвращает преобразованный массив arr 
 		 */
 		conversion: function() {
@@ -95,6 +101,5 @@
 
 	window.SCT = {
 		Cards: Cards,
-		// Card: Card
 	}
 }());
