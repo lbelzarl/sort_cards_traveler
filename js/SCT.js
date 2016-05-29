@@ -9,14 +9,10 @@
 
 		/**
 		 * Добавляет карточку в массив
-		 * @param {String} - typeTC - наименование транспортного стредсвта
-		 * @param {String} - flight - номер рейса
-		 * @param {String} - seat - посадочное место
-		 * @param {String} - A - точка отправки
-		 * @param {String} - B - точка прибытия
+		 * @param {Object} - карточка путешественника
 		 */
-		addCard: function(typeTC, flight, seat, A, B) {
-			this._cards.push( new Card(typeTC, flight, seat, A, B) );
+		addCard: function(params) {
+			this._cards.push( params );
 		},
 
 		/**
@@ -83,7 +79,7 @@
 			for (var i = 0, arr = []; i < this._cards.length; i++) {
 				var j = '',
 					index = 0,
-					newArr = ['Сеть на', 'Рейс №', 'из', 'в', 'место'];
+					newArr = ['Сесть на', 'Рейс №', 'из', 'в', 'место'];
 
 				for (var key in this._cards[i]) {
 					j += ' ' + newArr[index] + ' ' + this._cards[i][key];
@@ -97,24 +93,8 @@
 		}
 	}
 
-	/**
-	 * @constructor 
-	 * @param {String} - typeTC - наименование транспортного стредсвта
-	 * @param {String} - flight - номер рейса
-	 * @param {String} - seat - посадочное место
-	 * @param {String} - A - точка отправки
-	 * @param {String} - B - точка прибытия
-	 */
-	function Card (typeTC, flight, seat, A, B) {
-		this.typeTC = typeTC;
-		this.flight = flight;
-		this.A = A;
-		this.B = B;
-		this.seat = seat;
-	}
-
 	window.SCT = {
 		Cards: Cards,
-		Card: Card
+		// Card: Card
 	}
 }());

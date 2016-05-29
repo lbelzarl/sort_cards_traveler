@@ -2,16 +2,16 @@ var btn = document.querySelector('#demo');
 btn.addEventListener('click', function() {
 
 	SCT.Cards.empty();
-	
+
 	/**
 	 * Добавляем карточки в массив _cards
 	 */
-	SCT.Cards.addCard('Автобус', '2A', '15', 'Новочеркасск', 'Ростов');
-	SCT.Cards.addCard('Маршрука', '105', 'свободное', 'Ростов', 'Шахты');
-	SCT.Cards.addCard('Автобус', '82Т', '23', 'Шахты', 'Воронеж');
-	SCT.Cards.addCard('Автобус', '12Б', '1', 'Воронеж', 'Москва');
-	SCT.Cards.addCard('Ковер-Самолет', '0', 'свободное', 'Москва', 'Багдад');
-	SCT.Cards.addCard('Поезд', '689', '27', 'Багдад', 'АД');
+	SCT.Cards.addCard({typeTC: 'Автобус'      , flight: '2A' , seat: '15'       , A: 'Новочеркасск', B: 'Ростов' });
+	SCT.Cards.addCard({typeTC: 'Поезд'        , flight: '105', seat: 'свободное', A: 'Ростов'      , B: 'Шахты'  });
+	SCT.Cards.addCard({typeTC: 'Автобус'      , flight: '82Т', seat: '23'       , A: 'Шахты'       , B: 'Воронеж'});
+	SCT.Cards.addCard({typeTC: 'Автобус'      , flight: '12Б', seat: '1'        , A: 'Воронеж'     , B: 'Москва' });
+	SCT.Cards.addCard({typeTC: 'Ковер-Самолет', flight: '0'  , seat: 'свободное', A: 'Москва'      , B: 'Багдад' });
+	SCT.Cards.addCard({typeTC: 'Поезд'        , flight: '689', seat: '27'       , A: 'Багдад'      , B: 'АД'     });
 
 	/**
 	 * Перетасовываем карточки
