@@ -1,7 +1,7 @@
 # SCT.js
 Библиотека для сортировки карточек путешественника
 
-## Демо стенд http://lbelzarl.github.io/sort_cards_traveler.js/
+## Демо стенд http://lbelzarl.github.io/sort_cards_traveler/
 
 ## Структура библиотеки:
 * `Cards` - класс Карточки
